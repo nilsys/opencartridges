@@ -9,8 +9,8 @@ use App\Series;
 class CartridgeController extends Controller
 {
 
-        /**
-     * CustomersController constructor.
+    /**
+     * Cartridges constructor.
      */
     public function __construct()
     {
