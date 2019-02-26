@@ -1,0 +1,46 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: $white;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.04);
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.form-control:focus {
+    border-color: unset;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.select2-container--classic .select2-selection--single:focus {
+    border: 1px solid $darker-gray;
+}
+
+.select2-container--classic.select2-container--open .select2-dropdown {
+  border-color: $darker-gray !important;
+}
+
+.select2-container--classic.select2-container--open .select2-selection--single {
+  border: 1px solid $darker-gray !important; }
+
+.select2-container--classic .select2-results__option--highlighted[aria-selected] {
+     background-color: $gray;
+     color: $black; 
+}
+
+.shop_toolbar {
+    border: 1px solid #e5e5e5;
+    padding: 8px 10px;
+    margin: 0 0 40px;
+}
