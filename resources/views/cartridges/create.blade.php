@@ -45,8 +45,7 @@
 
                         <div class="form-group">
                             <label for="model" class="form-label">{{ __('app.model') }} <span class="text-danger">*</span></label>
-                            <select id="model" name="model" class="form-control" required>
-                                <option value="" selected="">{{ __('app.choose-option') }}</option>
+                            <select id="model" name="model" class="form-control" multiple="multiple" required>
                                 @foreach($Series as $SeriesItem)
                                     @foreach($SeriesItem->models as $ModelItem)
                                         <option value="{{ $ModelItem->name }}" data-chained="{{ $SeriesItem->name }}">{{ $ModelItem->name }}</option>

@@ -46,7 +46,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="#">Manufacturer</a>
                                         <a class="dropdown-item" href="#">Printer</a>
-                                        <a class="dropdown-item" href="#">Cartridge</a>
+                                        <a class="dropdown-item" href="{{ url('cartridge/register') }}">Cartridge</a>
                                     </div>
                                 </div>
                             </li>

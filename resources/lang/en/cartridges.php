@@ -13,7 +13,8 @@ return [
     |
     */
 
+    'cartridge' => 'Cartridge',
+    'recent' => 'Recent added cartridges',
     'title' => 'Product name',
-    'vendor_code' => 'Vendor Code',
-
+    'vendor_code' => 'Vendor Code'
 ];
