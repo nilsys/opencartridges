@@ -23,4 +23,5 @@ return [
     'request-failed' => 'Something went wrong while processing your request',
     'nothing-Found' => 'No data could be found for :product.',
     'language' => 'Language',
+    'save' => 'Continue'
 ];

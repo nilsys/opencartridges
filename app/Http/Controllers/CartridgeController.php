@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Manufacturers;
 use App\Series;
+
+use Illuminate\Http\Request;
+
+use Validator;
+
 class CartridgeController extends Controller
 {
 
@@ -59,4 +62,28 @@ class CartridgeController extends Controller
         //return response()->json([$request->all()]);
         return view('cartridges.results');
     }
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function ajaxRequestPost(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'manufacturer' => 'required',
+            'serie' => 'required',
+            'model' => 'required',
+            'title' => 'required'
+        ]);
+
+        if ($validator->passes()) {
+            $input = request()->all();
+            return response()->json(['success'=> 'Added new record.']);
+        } else {
+            return response()->json(['error'=> $validator->errors()->all()]);            
+        }
+    }    
 }

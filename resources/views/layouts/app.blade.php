@@ -24,37 +24,36 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {{ __('app.language') }}
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a href="{{ url('/') }}?lang=nl" class="dropdown-item">Dutch</a>
-                                <a href="{{ url('/') }}?lang=en" class="dropdown-item">English</a>
-                            </div>
-                        </div>
-                        </li>
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ __('app.language') }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Manufacturer</a>
+                                    <a class="dropdown-item" href="#">Printer</a>
+                                    <a class="dropdown-item" href="{{ url('cartridge/register') }}">Cartridge</a>
+                                </div>
+                            </div>                            
                         @guest
 
                         @else
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Create
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Manufacturer</a>
-                                        <a class="dropdown-item" href="#">Printer</a>
-                                        <a class="dropdown-item" href="{{ url('cartridge/register') }}">Cartridge</a>
-                                    </div>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-plus"></i> Create
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Manufacturer</a>
+                                    <a class="dropdown-item" href="#">Printer</a>
+                                    <a class="dropdown-item" href="{{ url('cartridge/register') }}">Cartridge</a>
                                 </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            </div>
 
+
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -66,7 +65,8 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
+                            </div>
+                        </div>
                         @endguest
                     </ul>
                 </div>
@@ -95,6 +95,6 @@
         </main>
     </div>
 
-    @stack('scripts')
+    @stack('scripts')   
 </body>
 </html>

@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/', 'CartridgeController@index')->name('cartridges.search');
 Route::get('/cartridge/register', 'CartridgeController@create')->name('cartridges.register');
+Route::post('/ajaxRequest', 'CartridgeController@ajaxRequestPost');
 
 Route::post('/submit', 'CartridgeController@search')->name('cartridge.lookup');
 
